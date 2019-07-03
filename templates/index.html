@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+    </thead>
+    {% for item in owned%}
+    <tr>
+        <td>{{item['symbol']}}</td>
+        <td>{{item['name']}}</td>
+        <td>{{item['shares']}}</td>
+        <td>{{item['price']}}</td>
+        <td>{{item['total']}}</td>
+    </tr>
+
+
+    {% endfor %}
+    <tfoot>
+        <tr>
+            <td colspan="4"></td>
+            <th>{{totalamount}}</th>
+        </tr>
+    </tfoot>
+
+</table>
+{% endblock %}

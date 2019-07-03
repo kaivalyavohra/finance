@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transacted</th>
+        </tr>
+    </thead>
+    {% for item in owned%}
+    <tr>
+        <td>{{item['company']}}</td>
+        <td>{{item['shares']}}</td>
+        <td>{{item['price']}}</td>
+        <td>{{item['dateof']}}</td>
+    </tr>
+
+
+    {% endfor %}
+
+
+</table>
+{% endblock %}
